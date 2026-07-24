@@ -7,7 +7,8 @@ r.hset("user:1", mapping={
     "age": 25,
     "city": "London"
 })
-
-name = r.hget("user:1", "name")
-
+data = r.hgetall("user:101") #will print whole dict 
+name = r.hget("user:1", "name") #will print name value in dict
+r.hdel("user:1", "name", "city") #will del varibales from a dict
+print(data)
 print(name)
